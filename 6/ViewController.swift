@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    //プロパティに値を保持
     private var get = 0
     
     override func viewDidLoad() {
