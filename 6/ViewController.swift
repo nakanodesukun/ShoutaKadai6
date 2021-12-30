@@ -40,6 +40,7 @@ class ViewController: UIViewController {
     private func numeric() {
         get = Int.random(in: 1 ... 100)
         outputLabel.text = String(get)
+        slider.setValue(50, animated: true)
     }
     
     private func message(missing: String, value: Int) {
