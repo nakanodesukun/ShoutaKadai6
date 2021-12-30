@@ -9,18 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+
+    @IBOutlet private weak var slider: UISlider!
+    @IBOutlet private weak var outputLabel: UILabel!
+    @IBOutlet private weak var minimumLabel: UILabel!
+    @IBOutlet private weak var maximumLabel: UILabel!
+    
     //プロパティに値を保持
     private var get = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         numeric()
+        minimumLabel.text = String(Int(slider.minimumValue))
+        maximumLabel.text = String(Int(slider.maximumValue))
     }
     
-    @IBOutlet private weak var slider: UISlider!
-    @IBOutlet private weak var outputLabel: UILabel!
-    
-    
+  
     
     @IBAction private func decisionButton(_ sender: Any) {
         let slider = Int(slider.value)
