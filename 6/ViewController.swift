@@ -38,6 +38,7 @@ class ViewController: UIViewController {
     
     
     private func numeric() {
+        //値をプロパティに格納
         get = Int.random(in: 1 ... 100)
         outputLabel.text = String(get)
         slider.setValue(50, animated: true)
