@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet private weak var slider: UISlider!
     @IBOutlet private weak var outputLabel: UILabel!
     @IBOutlet private weak var minimumLabel: UILabel!
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         maximumLabel.text = String(Int(slider.maximumValue))
     }
     
-  
+    
     
     @IBAction private func decisionButton(_ sender: Any) {
         let slider = Int(slider.value)
