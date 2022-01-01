@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: "結果", message: "\(missing)\nあなたの値\(value)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "再挑戦", style: .default, handler: { UIAlertAction in
             self.numeric()
-        }))
+        } ))
         present(alert, animated: true, completion: nil)
     }
 }
