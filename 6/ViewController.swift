@@ -16,38 +16,35 @@ class ViewController: UIViewController {
     @IBOutlet private weak var maximumLabel: UILabel!
     
     //プロパティに値を保持
-    private var get = 0
+    private var correctAnswer = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        numeric()
+        resetGame()
         minimumLabel.text = String(Int(slider.minimumValue))
         maximumLabel.text = String(Int(slider.maximumValue))
     }
     
-    
-    
     @IBAction private func decisionButton(_ sender: Any) {
-        let slider = Int(slider.value)
-        if slider == get {
-            message(missing: "あたり!", value: slider)
+        let sliderValue = Int(slider.value)
+        if sliderValue == correctAnswer {
+            message(missing: "あたり!", value: sliderValue)
         } else {
-            message(missing: "はずれ!", value: slider)
+            message(missing: "はずれ!", value: sliderValue)
         }
-        
     }
-    
-    
-    private func numeric() {
+
+    private func resetGame() {
         //値をプロパティに格納
-        get = Int.random(in: 1 ... 100)
-        outputLabel.text = String(get)
+        correctAnswer = Int.random(in: 1 ... 100)
+        outputLabel.text = String(correctAnswer)
         slider.setValue(50, animated: true)
     }
     
     private func message(missing: String, value: Int) {
         let alert = UIAlertController(title: "結果", message: "\(missing)\nあなたの値\(value)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "再挑戦", style: .default, handler: { UIAlertAction in
-            self.numeric()
+        alert.addAction(UIAlertAction(title: "再挑戦", style: .default, handler: { [weak self] _ in
+            self?.resetGame()
         } ))
         present(alert, animated: true, completion: nil)
     }
