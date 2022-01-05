@@ -41,10 +41,10 @@ class ViewController: UIViewController {
 
     private func message(missing: String, value: Int) {
         let alert = UIAlertController(title: "結果", message: "\(missing)\nあなたの値\(value)", preferredStyle: .alert)
-                                                                                   // メモリリークを防ぐため、クロージャーを弱参照
+                                                                                   // メモリリークを防ぐため、クロージャーを弱参照にする
         alert.addAction(UIAlertAction(title: "再挑戦", style: .default, handler: { [weak self] _ in
             self?.resetGame()
-        } ))
+        }))
         present(alert, animated: true, completion: nil)
     }
 }
