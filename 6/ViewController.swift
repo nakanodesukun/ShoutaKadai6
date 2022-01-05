@@ -44,7 +44,7 @@ class ViewController: UIViewController {
                                                                                    // メモリリークを防ぐため、クロージャーを弱参照
         alert.addAction(UIAlertAction(title: "再挑戦", style: .default, handler: { [weak self] _ in
             self?.resetGame()
-        }))
+        } ))
         present(alert, animated: true, completion: nil)
     }
 }
