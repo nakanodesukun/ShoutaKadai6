@@ -1,0 +1,5 @@
+
+disabled_rules:
+- trailing_whitespace # 空白の改行を許可するため除外
+disabled_rules:
+- identifier_name #3文字~41文字以内の制限を外すため
